@@ -7,11 +7,11 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="再见,明奇">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="再见,明奇">
 <meta property="og:locale">
-<meta property="article:author" content="明奇">
+<meta property="article:author" content="再见,明奇">
 <meta name="twitter:card" content="summary">
     
     
@@ -32,7 +32,7 @@
       
     
     <!-- title -->
-    <title>Hexo</title>
+    <title>再见,明奇</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
@@ -58,7 +58,7 @@
     
   
     <div id="title">
-      <h1>Hexo</h1>
+      <h1>再见,明奇</h1>
     </div>
   </a>
   <div id="nav">
@@ -73,7 +73,9 @@
        
         <li><a href="/archives/">Writing</a></li>
        
-        <li><a href="/projects_url">Projects</a></li>
+        <li><a href="/tags/">Tag</a></li>
+       
+        <li><a href="/categories/">Category</a></li>
       
     </ul>
   </div>
@@ -89,39 +91,31 @@
       
       
         
-          <a class="icon" target="_blank" rel="noopener" href="http://github.com/probberechts/cactus-dark" aria-label="github">
+          <a class="icon" target="_blank" rel="noopener" href="https://github.com/mzyd" aria-label="github">
             <i class="fab fa-github"></i><!--
       ---></a><!--
     ---><!--
-    --->, 
+    --->  
         
       
         
-          <a class="icon" target="_blank" rel="noopener" href="/" aria-label="twitter">
+          <a class="icon" target="_blank" rel="noopener" href="/404" aria-label="twitter">
             <i class="fab fa-twitter"></i><!--
       ---></a><!--
     ---><!--
-    --->, 
+    --->  
         
       
         
-          <a class="icon" target="_blank" rel="noopener" href="/" aria-label="facebook">
+          <a class="icon" target="_blank" rel="noopener" href="/404" aria-label="facebook">
             <i class="fab fa-facebook"></i><!--
-      ---></a><!--
-    ---><!--
-    --->, 
-        
-      
-        
-          <a class="icon" target="_blank" rel="noopener" href="/" aria-label="linkedin">
-            <i class="fab fa-linkedin"></i><!--
       ---></a><!--
     ---><!--
     ---> and 
         
       
         
-          <a class="icon" target="_blank" rel="noopener" href="mailto:name@email.com" aria-label="mail">
+          <a class="icon" target="_blank" rel="noopener" href="mailto:mzy3991@gmail.com" aria-label="mail">
             <i class="fas fa-envelope"></i><!--
       ---></a>
         <!--
@@ -193,25 +187,70 @@
     Copyright &copy;
     
     
+    <span id="sitetime"></span>
+
+    
+    
+
     2016-2021
-    明奇
+    再见,明奇
   </div>
   <div class="footer-right">
     <nav>
       <ul>
-         
+        
           <li><a href="/">Home</a></li>
-         
+        
           <li><a href="/about/">About</a></li>
-         
+        
           <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/projects_url">Projects</a></li>
+        
+          <li><a href="/tags/">Tag</a></li>
+        
+          <li><a href="/categories/">Category</a></li>
         
       </ul>
     </nav>
   </div>
 </footer>
+<script language=javascript>
+ function siteTime() {
+   window.setTimeout("siteTime()", 1000);
+   var seconds = 1000;
+   var minutes = seconds * 60;
+   var hours = minutes * 60;
+   var days = hours * 24;
+   var years = days * 365;
+   var today = new Date();
+   var todayYear = today.getFullYear();
+   var todayMonth = today.getMonth() + 1;
+   var todayDate = today.getDate();
+   var todayHour = today.getHours();
+   var todayMinute = today.getMinutes();
+   var todaySecond = today.getSeconds();
+   /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+      year - 作为date对象的年份，为4位年份值
+      month - 0-11之间的整数，做为date对象的月份
+      day - 1-31之间的整数，做为date对象的天数
+      hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+      minutes - 0-59之间的整数，做为date对象的分钟数
+      seconds - 0-59之间的整数，做为date对象的秒数
+      microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+   var t1 = Date.UTC(2021, 06, 04, 22, 00, 06); //北京时间2021-06-04 00:00:00
+   var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+   var diff = t2 - t1;
+   var diffYears = Math.floor(diff / years);
+   var diffDays = Math.floor((diff / days) - diffYears * 365);
+   var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+   var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+   var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+   document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+ }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+ siteTime();
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
     </div>
     <!-- styles -->
